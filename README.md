@@ -1,37 +1,31 @@
 # goerror
 Error message module for golang. Create an error message with filename, lineno, status, arg, and message parameters.
 
-// Package main procedure in gotest.go
+    // Package main procedure in gotest.go
 
-package main
+	package main
 
-import (
+	import (
 
-	"errors"
-	"fmt"
-	"os"
+		"errors"
+		"fmt"
+		"os"
 
-	"github.com/codegangsta/cli"
-	"github.com/user/goerror"
-)
+		"github.com/codegangsta/cli"
+		"github.com/user/goerror"
+	)
 
-func main() {
-	app := cli.NewApp()
-	app.Name = "gotest"
-	app.Usage = "./gotest [options]"
-	app.Version = "0.1.0"
-	app.Flags = []cli.Flag{
-		cli.StringFlag{Name: "error", Value: "main.go:120:ERROR:500:TestError", EnvVar: "ERROR"},
-	}
-	app.Action = func(c *cli.Context) {
+	func main() {
+		app := cli.NewApp()
+		app.Name = "gotest"
+		app.Usage = "./gotest [options]"
+		app.Version = "0.1.0"
+		app.Flags = []cli.Flag{cli.StringFlag{Name: "error", Value: "main.go:120:ERROR:500:TestError", EnvVar: "ERROR"},}
+		app.Action = func(c *cli.Context) {
     // The defined type is an object pointer derived from a go structure GoError
-    
     // var gerr *goerror.GoError
-    
     // This can be defined as
-    
     // gerr := goerror.New("")
-    
     // where gerr is a pointer to an empty GoError object
     
     // a new GoError object can be generated from a formatted string
