@@ -30,37 +30,37 @@ Error message module for golang. Create an error message with filename, lineno, 
     // where gerr is a pointer to an empty GoError object
     
     // a new GoError object can be generated from a formatted string
-			err := c.String("error")
+			inpstr := c.String("error")
 			fmt.Println("Error.Value = " + err)
 			fmt.Println("create New(Error.Value)..........")
     
     // goerror.New() method initialises GoError object from a formatted input string
 			fmt.Println("err := goerror.New(Error.Value)")
     
-			gerr := goerror.New(err)
+			gerr := goerror.New(inpstr)
     
     // goerror.UserError() method returns the formatted user GoError message
-			fmt.Println("test err.UserError().............")
+			fmt.Println("test gerr.UserError().............")
     
 			fmt.Println(gerr.UserError())
     
     // goerror.CodeError() method returns the formatted code GoError message
-			fmt.Println("test err.CodeError().............")
+			fmt.Println("test gerr.CodeError().............")
     
 			fmt.Println(gerr.CodeError())
     
     // goerror.PrintError() method prints the formatted user GoError message to stdout
-			fmt.Println("test err.PrintError()............")
+			fmt.Println("test gerr.PrintError()............")
     
 			gerr.PrintError()
     
     // goerror.PrintCodeError() method prints the formatted code GoError message to stdout
-			fmt.Println("test err.PrintCodeError()........")
+			fmt.Println("test gerr.PrintCodeError()........")
     
 			gerr.PrintCodeError()
     
     // goerror.IsNil() method tests if a valid error exists
-			fmt.Println("test err.IsNil().................")
+			fmt.Println("test gerr.IsNil().................")
     
 			if gerr.IsNil() {
 				fmt.Println("gerr.IsNil() == true")
