@@ -20,7 +20,9 @@ Error message module for golang. Create an error message with filename, lineno, 
 		app.Name = "gotest"
 		app.Usage = "./gotest [options]"
 		app.Version = "0.1.0"
-		app.Flags = []cli.Flag{cli.StringFlag{Name: "error", Value: "main.go:120:ERROR:500:TestError", EnvVar: "ERROR"},}
+		app.Flags = []cli.Flag{
+			cli.StringFlag{Name: "error", Value: "main.go:120:ERROR:500:TestError", EnvVar: "ERROR"},
+		}
 		app.Action = func(c *cli.Context) {
     // The defined type is an object pointer derived from a go structure GoError
     // var gerr *goerror.GoError
@@ -51,12 +53,12 @@ Error message module for golang. Create an error message with filename, lineno, 
     // goerror.PrintError() method prints the formatted user GoError message to stdout
 		fmt.Println("test err.PrintError()............")
     
-    gerr.PrintError()
+		gerr.PrintError()
     
     // goerror.PrintCodeError() method prints the formatted code GoError message to stdout
 		fmt.Println("test err.PrintCodeError()........")
     
-    gerr.PrintCodeError()
+		gerr.PrintCodeError()
     
     // goerror.IsNil() method tests if a valid error exists
 		fmt.Println("test err.IsNil().................")
@@ -69,12 +71,12 @@ Error message module for golang. Create an error message with filename, lineno, 
     
     // a new GoError object can also be generated from a standard error
     
-    err := errors.New("A test error")
-    testerr := goerror.FromError(err)
+		err := errors.New("A test error")
+		testerr := goerror.FromError(err)
     
     // and as is usual practice can be read as standard error
     
-    fmt.Println(testerr)
-	}
+		fmt.Println(testerr)
+		}
 	app.Run(os.Args)
-}
+	}
