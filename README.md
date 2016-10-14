@@ -31,11 +31,11 @@ Error message module for golang. Create an error message with filename, lineno, 
     
     // a new GoError object can be generated from a formatted string
 			inpstr := c.String("error")
-			fmt.Println("Error.Value = " + err)
+			fmt.Println("Error.Value = " + inpstr)
 			fmt.Println("create New(Error.Value)..........")
     
     // goerror.New() method initialises GoError object from a formatted input string
-			fmt.Println("err := goerror.New(Error.Value)")
+			fmt.Println("gerr := goerror.New(Error.Value)")
     
 			gerr := goerror.New(inpstr)
     
