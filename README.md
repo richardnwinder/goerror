@@ -69,12 +69,16 @@ Error message module for golang. Create an error message with filename, lineno, 
 			}
     
     // a new GoError object can also be generated from a standard error
-    
+			fmt.Println("create FromError(err).............")
+			fmt.Println("err := errors.New(\"A test error\")")
+			fmt.Println("testerr := goerror.FromError(err)")
+			
 			err := errors.New("A test error")
 			testerr := goerror.FromError(err)
     
     // and as is usual practice can be read as standard error
-    
+			fmt.Println("test fmt.Println(testerr)..........")
+			
 			fmt.Println(testerr)
 		}
 		app.Run(os.Args)
