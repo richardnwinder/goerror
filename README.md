@@ -2,8 +2,11 @@
 Error message module for golang. Create an error message with filename, lineno, status, arg, and message parameters.
 
 // Package main procedure in gotest.go
+
 package main
+
 import (
+
 	"errors"
 	"fmt"
 	"os"
@@ -21,14 +24,18 @@ func main() {
 		cli.StringFlag{Name: "error", Value: "main.go:120:ERROR:500:TestError", EnvVar: "ERROR"},
 	}
 	app.Action = func(c *cli.Context) {
-// The defined type is an object pointer derived from a go structure GoError
-// var gerr *goerror.GoError
-// This can be defined as
-// gerr := goerror.New("")
-// where gerr is a pointer to an empty GoError object
+    // The defined type is an object pointer derived from a go structure GoError
+    
+    // var gerr *goerror.GoError
+    
+    // This can be defined as
+    
+    // gerr := goerror.New("")
+    
+    // where gerr is a pointer to an empty GoError object
     
     // a new GoError object can be generated from a formatted string
-    err := c.String("error")
+		err := c.String("error")
 		fmt.Println("Error.Value = " + err)
 		fmt.Println("create New(Error.Value)..........")
     
